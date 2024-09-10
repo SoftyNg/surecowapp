@@ -11,6 +11,14 @@ class Templates extends Trongate {
         load('public', $data);
     }
 
+    function surecow($data) {
+        load('surecow', $data);
+    }
+
+    function surecow_admin($data) {
+        load('surecow_admin', $data);
+    }
+
     /**
      * Loads the 'error_404' view with provided data.
      *
