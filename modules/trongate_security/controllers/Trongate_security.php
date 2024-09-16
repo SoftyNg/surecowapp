@@ -11,10 +11,18 @@ class Trongate_security extends Trongate {
         //returns EITHER (trongate)token OR initialises 'not allowed' procedure
 
         switch ($scenario) {
-                // case 'members area':
-                //     $this->module('members');
-                //     $token = $this->members->_make_sure_allowed();
-                //     break;
+            case 'agent':
+                $this->module('app');
+                $token = $this->app->_make_sure_allow_agent();
+                break;
+                case 'admin':
+                   $this->module('admin');
+                   $token = $this->app->_make_sure_allow_admin();
+                   break;
+                   case 'costumer':
+                    $this->module('costumer');
+                    $token = $this->app->_make_sure_allow_costumer();
+                    break;
             default:
                 $this->module('trongate_administrators');
                 $token = $this->trongate_administrators->_make_sure_allowed();
