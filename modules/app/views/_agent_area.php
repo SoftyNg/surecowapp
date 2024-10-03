@@ -21,6 +21,7 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
+                    
 
 
                    
@@ -218,4 +219,4 @@
             <!-- End of Main Content -->
 
 
-
+            <?php require_once ("_footer.php"); ?>

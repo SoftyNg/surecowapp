@@ -125,7 +125,7 @@ $redirect_url = $_SESSION['last_page'] ?? $redirect_url;
     session_start();
     $this->module('trongate_tokens');
     $this->trongate_tokens->_destroy();
-    redirect('users/index');
+    redirect('app/login');
   }
 
 
@@ -216,6 +216,19 @@ private function setFlashAndRedirect(string $message, string $redirectMethod): v
   set_flashdata($message);
   $this->$redirectMethod();
 }
+
+public function add_client(): void {
+  $this->module('trongate_security');
+  $token = $this->trongate_security->_make_sure_allowed('agent');
+  $_SESSION['last_page'] = 'app/agent_dashboard';
+  $data['user_data'] = $this->_get_user_data($token);
+    $data['user_data'] = $this->_get_user_data($token);
+
+    $data['view_module'] = 'app';
+    $data['view_file'] = '_add_client';
+    $this->template('surecow_admin', $data);
+}
+
 
 
   // Loads the overview page and fetches all the necessary data to be displayed
