@@ -13,7 +13,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= BASE_URL?>">
                 <div class="sidebar-brand-icon">
-                <img src='<?= BASE_URL?>images/loggline.png'>
+                <img src='<?= BASE_URL?>images/surecowtitle.png'>
                 </div>
                 <div class="sidebar-brand-text mx-3"></div>
             </a>

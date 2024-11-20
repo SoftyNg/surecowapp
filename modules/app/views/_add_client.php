@@ -136,7 +136,7 @@
         
         <?php    
                             flashdata();
-                              echo form_open('app/create_account',array(
+                              echo form_open('app/add_client',array(
                               "class" =>"user"));                         
                        
                              echo validation_errors();
@@ -588,22 +588,15 @@ etc.</li>
                               <div class="card-body">
                                   
                                     <div class="text-xs font-weight-bold text-info text-uppercase">
-                                   Annual Income</div>
+                                   The investment will be</div>
                                      <div class="col">';
                                    
-                                      echo form_radio('annual_income','20M and under'); echo ' N20M and under';
+                                      echo form_radio('investment','1/10'); echo ' 1/10 of my financial portfolio';
                                      
                                      echo '</br>';
-                                      echo form_radio('annual_income','N20M to N50M'); echo ' N20M to N50M';
+                                      echo form_radio('investment','2/10'); echo ' 2/10 of my financial portfolio';
                                  
-                                     echo '</br>';
-                                      echo form_radio('annual_income','N50M to N100M'); echo ' N50M to N100M';
-                                     
-                                     echo '</br>';
-                                      echo form_radio('annual_income','N200 to N500M'); echo ' N200 to N500M';
-                                     
-                                     echo '</br>';
-                                      echo form_radio('annual_income','N500 and higher'); echo ' N500 and higher';
+                                    
                                      echo '</div>
                                   </div>
                               </div>
@@ -641,67 +634,46 @@ etc.</li>
                              
                              
                              echo " <div class='form-group'>";
-                             echo form_label('Address:');                           
+                             echo form_label('Tell us more about you:');                           
                              echo form_textarea('address','',array("placeholder" =>
-                              "Farm or Ranch address","class" =>"form-control form-control-user",
+                              "More details here...","class" =>"form-control form-control-user",
                              "id"=>""));
                              echo "</div>"; 
                              
-                                                                        
-                             echo " <div class='form-group row'>"; 
-
-                             echo " <div class='col-sm-6 mb-3 mb-sm-0'>";                         
-                             echo form_input('lga','',array("placeholder" =>
-                              "LGA","class" =>"form-control form-control-user",
-                             "id"=>""));    
-                             echo " </div>";
-
-                             echo " <div class='col-sm-6 mb-3 mb-sm-0'>";                         
-                             echo form_input('state','',array("placeholder" =>
-                              "State","class" =>"form-control form-control-user",
-                             "id"=>"confirm"));    
-                             echo " </div>";
-
-                             echo " </div>";
-                             echo " <div class='form-group row'>"; 
-
-                             echo " <div class='col-sm-6 mb-3 mb-sm-0'>";                         
-                             echo form_number('yib','',array("placeholder" =>
-                              "Years in business","class" =>"form-control form-control-user",
-                             "id"=>""));    
-                             echo " </div>";
-
-                             echo " <div class='col-sm-6 mb-3 mb-sm-0'>";                         
-                             echo form_number('nbof','',array("placeholder" =>
-                              "Number of staff","class" =>"form-control form-control-user",
-                             "id"=>"confirm"));    
-                             echo " </div>";
-
-                             echo " </div>";                            
-                         
-
                              echo "                                    
                                 
                                     <hr>
-                                    <div class='card-header py-3 text-center'>
-                         <h6 class='m-0 font-weight-bold text-primary'>Farm/cattle status</h6>
-                   </div>
+                                 <p><b>About this Application</b></p>
+                                 <p>This is a Surecow plan application. 
+                                 Submitting this form means you agree to certain provisions that will govern
+                                  our relationship. When we accept it, this Application and all accompanying or 
+                                  supplemental documents form the entire Agreement between us for this account.
+Unless otherwise indicated in this Application, the words “you,” “your,” “yourself,” and “yours” mean the applicant(s). The 
+words “we,” “us,” and “our” mean {Livestock247 in respect to Surecow} and our branches, subsidiaries, and 
+affiliates. </p>
+<p>
+Getting Started 
+</p>
+Please complete this Application, along with any required supplemental forms identified through this
+ application process. 
+In order to complete this Application, you will need some or all of the following information: 
+    <ul>
+<li>Identification information, such as a driver’s license, passport, or 
+another type of government-issued identification </li>
+<li>Information about your annual income, debt, expenses, and net worth </li>
+<li>Animal Identication details</li>
+</ul>
+The above information helps us comply with various securities regulations and rules and to verify, and record information that identifies each applicant. 
+The information also helps us more fully understand your profile and identify what types of plans may be suitable for you. Please note: if we cannot verify the information you provide, we may be required to restrict or deny your account.
+Please remember to notify us if you experience a significant in your business. 
+
                                   "; 
                                   
-                                  echo form_label('Have been enrolled in the following programs:'); 
-
-                                  echo '<div class"form-group row">';   
-                                  echo " <div class='col-sm-6 mb-3 mb-sm-0'>";                               
-                                  echo 'Hoina ';
-                                  echo form_checkbox('hoina', 1, '');
-                                  
-                                  echo 'AIMS';
-                                  echo form_checkbox('aims', 1, '');
-                                  echo '</div>';
-                                  echo '</div>';
+                               
 
                                   echo "<div class='form-group'>";                        
-                             echo form_submit('Submit','Add client',array("class" =>"btn btn-primary btn-user btn-block")); 
+                             echo form_submit('Submit','Add client',
+                             array("class" =>"btn btn-primary btn-user btn-block")); 
                              echo " <div>";
                              echo "       <hr>"; 
                                   echo form_close();

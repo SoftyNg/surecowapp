@@ -61,7 +61,7 @@ switch ($user_type) {
       $redirect_url = costumer_dashboard();
       break;
   default:
-      $redirect_url = login();
+      $redirect_url = $this->login();
       break;
 }
 
@@ -146,8 +146,7 @@ $redirect_url = $_SESSION['last_page'] ?? $redirect_url;
         if (!empty($rows)) {
             $this->setFlashAndRedirect('This email has already been used to create an account', 'register');
         } else {
-            $this->sendRegistrationEmailAndInsert($data);
-            
+            $this->sendRegistrationEmailAndInsert($data);            
         }
     } else {
         $this->register();
@@ -231,6 +230,8 @@ public function add_client(): void {
 
 
 
+
+
   // Loads the overview page and fetches all the necessary data to be displayed
   public function agent_dashboard(): void {
     $this->module('trongate_security');
@@ -307,6 +308,18 @@ public function add_client(): void {
 private function getInStockProducts() {
   $sql = 'SELECT * FROM product_details WHERE in_stock = :in_stock LIMIT 7';
   return $this->model->query_bind($sql, $this->inStockParam, 'object');
+}
+
+function submit_client(){
+  $data = $this->_get_new_user_data();
+}
+
+function _get_new_client_data(): array {
+  return [
+      'firstname' => post('firstname', true),
+      'lastname' => post('lastname', true),
+      'email' => post('email', true),
+  ];
 }
 
 
